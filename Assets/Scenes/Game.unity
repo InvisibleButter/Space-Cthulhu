@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124074661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 136393414}
   - component: {fileID: 136393415}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   - {fileID: 2105314252}
   - {fileID: 520802232}
   EnemyHolder: {fileID: 1739311657}
-  EnemyPrefab: {fileID: 6473482260199931392, guid: 4d7c26931f53cea438d6fb43fae880bb,
+  EnemyPrefab: {fileID: 4761261871094801198, guid: 5dcbf8c59b0c0034f984e0d67f7b560e,
     type: 3}
 --- !u!1 &168517948
 GameObject:
@@ -540,7 +540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 520802232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: S_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625344435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: S_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1339,7 +1339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1739311657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105314252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: S_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
 	{
 		Destroy(gameObject, LifeTime);
 
-		//Collider[] initialCollisions = Physics.OverlapSphere(transform.position, .1f, Mask);
-		//if (initialCollisions.Length > 0)
-		//{
-		//	HitObject(initialCollisions[0]);
-		//}
+		Collider[] initialCollisions = Physics.OverlapSphere(transform.position, .1f, Mask);
+		if (initialCollisions.Length > 0)
+		{
+			HitObject(initialCollisions[0]);
+		}
 	}
 
 	public void SetSpeed(float newSpeed)
