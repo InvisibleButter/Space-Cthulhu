@@ -10,6 +10,12 @@ public class Enemy : Entity
     private float _updateTime = 0.5f;
 
     public event EventHandler Kill;
+    public int Damage = 1;
+
+    private bool _isAttacking;
+    private float _attackCooldown = 1.5f;
+    private float _attackDist = 0.5f;
+    private float _nextAttackTime;
 
     protected override void Start()
     {
@@ -17,7 +23,7 @@ public class Enemy : Entity
 
         _navMashAgent = GetComponent<NavMeshAgent>();
         _target = GameObject.FindGameObjectWithTag("Player").transform;
-        
+
         StartCoroutine(RefreshTargetPos());
     }
 
@@ -45,5 +51,28 @@ public class Enemy : Entity
     public void Respawn()
     {
         Start();
+    }
+
+    private void Update()
+    {
+        if (Time.time > _nextAttackTime)
+        {
+            float sqrDstToTarget = (_target.position - transform.position).sqrMagnitude;
+            if (sqrDstToTarget < Mathf.Pow(_attackDist + 2.1f, 2))
+            {
+                _nextAttackTime = Time.time + _attackCooldown * 2;
+                StartCoroutine(WaitToRecover());
+            }
+
+        }
+    }
+
+    private IEnumerator WaitToRecover()
+    {
+        _navMashAgent.isStopped = true;
+        _target.GetComponent<IDamageable>().Hit(Damage);
+
+        yield return new WaitForSeconds(_attackCooldown);
+        _navMashAgent.isStopped = false;
     }
 }
