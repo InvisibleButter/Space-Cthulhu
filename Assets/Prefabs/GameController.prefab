@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7815064944278581371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5022491132898098526}
+  - component: {fileID: 9100849547669636907}
+  - component: {fileID: 2718488325493248286}
+  - component: {fileID: 934077680382864089}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5022491132898098526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815064944278581371}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1113.2098, y: 509.01074, z: 7.2303467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9100849547669636907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815064944278581371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285c5637aed16714cabb0f90d6d20d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stack: {fileID: 934077680382864089}
+  ressource: {fileID: 2718488325493248286}
+--- !u!114 &2718488325493248286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815064944278581371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5390511e0d03a6a479ae7297be545984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxAmunition: 45
+  StartAmunition: 25
+  AmunitionPerCard: 5
+  MaxHealth: 33
+  HealthPerCard: 3
+  MaxSpeed: 1.5
+  NormalSpeed: 1
+  SpeedBoostTime: 3
+  ShieldTime: 3
+  LightTime: 5
+  MaxTickSpeed: 0.4
+  NormalTickSpeed: 0.2
+  TickBoostTime: 3
+  healt: 0
+  amunition: 0
+  shieldTimer: 0
+  speedBoostTimer: 0
+  tickBoostTimer: 0
+  lightTimer: 0
+  speed: 0
+  tickSpeed: 0
+--- !u!114 &934077680382864089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7815064944278581371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c64b68e7ffe354cae09699904a5de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  goal: {fileID: 0}
+  CardPrefab: {fileID: 140351275661185663, guid: e327b13b7a3aa394fa5c4e25fcc594fb,
+    type: 3}
+  belt: {fileID: 0}
+  CardSprites:
+  - {fileID: 8932929663314373071, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: 4860394276491531131, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: -3593000549575306626, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: 8984920603029182177, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: -2319406322562588323, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: -7050473590979094863, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: 8015114893973570922, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  maxCardOnBelt: 30
+  startCardsAmount: 05000000010000000200000002000000
+  cardDistance: 0.2
+  tickTimer: 0
