@@ -58,7 +58,7 @@ public class AmunitionCard : Card
     public override void Action()
     {
         Debug.Log("Munition Nachladen, Animationen und Effekte abspielen");
-        RessourceManager.Instance.Reloade();
+        RessourceManager.Instance.AddMagazine();
     }
 }
 public class HealingCard : Card

@@ -4,8 +4,6 @@
 [RequireComponent(typeof(GunController))]
 public class Player : Entity
 {
-
-	public float moveSpeed = 5;
 	private PlayerController _playerController;
 	private GunController _gunController;
 
@@ -24,7 +22,7 @@ public class Player : Entity
 		float z = Input.GetAxisRaw("Vertical");
 
 		Vector3 move = transform.right * x + transform.forward * z;
-		Vector3 moveVelocity = move.normalized * moveSpeed;
+		Vector3 moveVelocity = move.normalized * RessourceManager.Instance.speed;
 
 		_playerController.Move(moveVelocity);
 		_playerController.Rotate();

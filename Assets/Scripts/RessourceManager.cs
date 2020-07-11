@@ -21,9 +21,10 @@ public class RessourceManager : MonoBehaviour
         }
     }
 
-    public int MaxAmunition;
-    public int StartAmunition;
-    public int AmunitionPerCard;
+    public int MaxMagizines;
+    public int StartMagazines;
+    public int MagazinesPerCard;
+    public int ShotsPerMagazines;
 
     public int MaxHealth;
     public int HealthPerCard;
@@ -45,14 +46,14 @@ public class RessourceManager : MonoBehaviour
 
     public int DMG;
 
-    public int ResDownAmmunition;
+    public int ResDownMagazines;
     public int ResDownLight;
     public int ResDownShield;
 
     [HideInInspector]
     public int health;
     [HideInInspector]
-    public int amunition;
+    public int magazines;
     [HideInInspector]
     public float shieldTimer;
     [HideInInspector]
@@ -69,11 +70,13 @@ public class RessourceManager : MonoBehaviour
     public float slowSpeedTimer;
     [HideInInspector]
     public float tickStopTimer;
+    [HideInInspector]
+    public int shotsInMagazine; 
 
     public void Initiate()
     {
         health = MaxHealth;
-        amunition = StartAmunition;
+        magazines = StartMagazines;
         shieldTimer = 0;
         speedBoostTimer = 0;
         tickBoostTimer = 0;
@@ -82,6 +85,7 @@ public class RessourceManager : MonoBehaviour
         tickSpeed = NormalTickSpeed;
         slowSpeedTimer = 0;
         tickStopTimer = 0;
+        shotsInMagazine = ShotsPerMagazines;
     }
 
     public void RessourceUpdate()
@@ -136,7 +140,7 @@ public class RessourceManager : MonoBehaviour
             }
         }
 
-        Debug.Log(amunition);
+        Debug.Log(magazines);
     }
 
     public void SpeedBoost()
@@ -172,13 +176,23 @@ public class RessourceManager : MonoBehaviour
         else
             health += HealthPerCard;
     }
-    public void Reloade()
+    public void AddMagazine()
     {
-        if (amunition + AmunitionPerCard > MaxAmunition)
-            amunition = MaxAmunition;
+        if (magazines + MagazinesPerCard > MaxMagizines)
+            magazines = MaxMagizines;
         else
-            amunition += AmunitionPerCard;
+            magazines += MagazinesPerCard;
     }
+    public void RemoveMagazine()
+    {
+        magazines--;
+        if(magazines <= 0)
+        {
+            magazines = shotsInMagazine = 0;
+        }
+        shotsInMagazine = ShotsPerMagazines;
+    }
+
     public void RefillLight()
     {
         lightTimer += LightTime;
@@ -189,10 +203,13 @@ public class RessourceManager : MonoBehaviour
     }
     public void SteelResources()
     {
-        if (amunition - ResDownAmmunition > 0)
-            amunition -= ResDownAmmunition;
+        if (magazines - ResDownMagazines > 1)
+            magazines -= ResDownMagazines;
         else
-            amunition = 0;
+            if (magazines < 1)
+                magazines = 0;
+        else
+            magazines = 1;
 
 
         if (lightTimer - ResDownLight > 0)
@@ -205,5 +222,14 @@ public class RessourceManager : MonoBehaviour
             shieldTimer -= ResDownShield;
         else
             shieldTimer = 0;
+    }
+
+    public void Shoot()
+    {
+        shotsInMagazine--;
+        if(shotsInMagazine <= 0)
+        {
+            shotsInMagazine = 0;
+        }
     }
 }

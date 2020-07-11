@@ -33,12 +33,4 @@ public class GunController : MonoBehaviour
     {
         CurrentGun.Reload();
     }
-
-    public void ToggleReloadInfo(bool b)
-    {
-        if( b != ReloadInfo.gameObject.activeInHierarchy)
-        {
-            ReloadInfo.gameObject.SetActive(b);
-        }
-    }
 }

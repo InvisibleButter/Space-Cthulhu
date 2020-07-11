@@ -268,10 +268,9 @@ MonoBehaviour:
   Muzzle: {fileID: 6549356459189507379}
   Projectile: {fileID: 6784318656362153389, guid: a5fb3414384b08848b839bcef5e836e2,
     type: 3}
-  _msBetweenShots: 100
-  _muzzleVelocity: 35
-  ReloadTime: 3.5
-  MaxAmmoPerMag: 10
+  MsBetweenShots: 200
+  MuzzleVelocity: 35
+  ReloadTime: 1.5
 --- !u!1 &6549356458576233050
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +301,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549356458576233050}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -414,7 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 10
-  moveSpeed: 5
 --- !u!114 &6549356458576233042
 MonoBehaviour:
   m_ObjectHideFlags: 0

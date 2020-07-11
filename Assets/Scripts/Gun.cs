@@ -5,59 +5,49 @@ public class Gun : MonoBehaviour
 {
 	public Transform Muzzle;
 	public Bullet Projectile;
-	public float _msBetweenShots = 100f;
-	public float _muzzleVelocity = 35f;
+	public float MsBetweenShots = 200f;
+	public float MuzzleVelocity = 35f;
 
-	public float ReloadTime = 3.5f;
-	public int MaxAmmoPerMag = 10;
+	public float ReloadTime = 0.1f;
 
 	private float _nextShotTime;
 
-	private bool _hasToReload, _isReloading;
-	private int _shootsRemaining;
-	private int _currentMaxAmmo = 20;
+	private bool _isReloading;
+	private int _currentMaxAmmo ;
 
 
 	private void Start()
 	{
-		_shootsRemaining = GetMagCount();
+		_currentMaxAmmo = RessourceManager.Instance.magazines * RessourceManager.Instance.ShotsPerMagazines;
 	}
 
 	private int GetMagCount()
 	{
-		if( _currentMaxAmmo - MaxAmmoPerMag >= 0)
+		if( _currentMaxAmmo - RessourceManager.Instance.magazines >= 0)
 		{
-			_currentMaxAmmo -= MaxAmmoPerMag;
-			return MaxAmmoPerMag;
+			_currentMaxAmmo -= RessourceManager.Instance.ShotsPerMagazines;
+			return RessourceManager.Instance.ShotsPerMagazines;
 		}
 		int max = _currentMaxAmmo;
-
 		_currentMaxAmmo = 0;
+
 		return max;
 	}
 
 	public void Shoot()
 	{
-
-		if (!_isReloading && Time.time > _nextShotTime && _shootsRemaining > 0)
+		if (!_isReloading && Time.time > _nextShotTime && RessourceManager.Instance.shotsInMagazine > 0)
 		{
-			Debug.Log("** shoot");
-			_shootsRemaining--;
-			_nextShotTime = Time.time + _msBetweenShots / 1000;
+			RessourceManager.Instance.Shoot();
+			_nextShotTime = Time.time + MsBetweenShots / 1000;
 			Bullet bullet = Instantiate(Projectile, Muzzle.position, Muzzle.rotation, GunController.Instance.BulletHolder) as Bullet;
-			bullet.SetSpeed(_muzzleVelocity);
-
-			if(_shootsRemaining == 0)
-			{
-				_hasToReload = true;
-				GunController.Instance.ToggleReloadInfo(true);
-			}
+			bullet.SetSpeed(MuzzleVelocity);
 		}
 	}
 
 	public void Reload() 
 	{ 
-		if(_hasToReload && !_isReloading)
+		if(!_isReloading)
 		{
 			StartCoroutine(WaitToReload());
 		}
@@ -66,13 +56,10 @@ public class Gun : MonoBehaviour
 	private IEnumerator WaitToReload()
 	{
 		_isReloading = true;
-
 		yield return new WaitForSeconds(ReloadTime);
 
-		_shootsRemaining = GetMagCount();
-		Debug.Log("** remaining shoots: " + _shootsRemaining);
-		_hasToReload = _shootsRemaining > 0;
-		GunController.Instance.ToggleReloadInfo(false);
+		RessourceManager.Instance.RemoveMagazine();
+
 		_isReloading = false;
 	}
 
