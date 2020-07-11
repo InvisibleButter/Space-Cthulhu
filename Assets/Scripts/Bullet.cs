@@ -28,8 +28,16 @@ public class Bullet : MonoBehaviour
 	void Update()
 	{
 		float moveDist = Time.deltaTime * speed;
-		CheckCollision(moveDist);
+		//CheckCollision(moveDist);
 		transform.Translate(Vector3.forward * moveDist);
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Enemy")
+		{
+			HitObject(other);
+		}
 	}
 
 	private void CheckCollision(float moveDist)

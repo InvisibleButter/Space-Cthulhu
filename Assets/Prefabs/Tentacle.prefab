@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7512510304350391168}
   - component: {fileID: 6094164637351257609}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +45,7 @@ LineRenderer:
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -148,7 +149,7 @@ GameObject:
   - component: {fileID: 376761094268645079}
   - component: {fileID: 447792716243265073}
   - component: {fileID: 681627227351711989}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,6 +192,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -228,7 +230,7 @@ GameObject:
   - component: {fileID: 3593646915055169913}
   - component: {fileID: 4070960581014364509}
   - component: {fileID: 1583984643347286811}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,6 +273,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -334,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4474993622984701620}
   - component: {fileID: 8984542486329632061}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Tentacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

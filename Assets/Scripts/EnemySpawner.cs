@@ -71,8 +71,7 @@ public class EnemySpawner : MonoBehaviour
 
         Transform t = GetSpawnPoint();
 
-        int rnd = UnityEngine.Random.Range(0, SpawnPoints.Length);
-        e.transform.position = SpawnPoints[rnd].position;
+        e.transform.position = t.position;
         e.gameObject.SetActive(true);
         e.Respawn();
     }

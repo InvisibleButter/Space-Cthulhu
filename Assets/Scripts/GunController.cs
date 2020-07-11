@@ -5,10 +5,6 @@ public class GunController : MonoBehaviour
     public static GunController Instance;
     public Transform BulletHolder;
 
-    //todo dev stuff
-    public Transform ReloadInfo;
-
-
     private void Awake()
     {
         if(Instance != null)
