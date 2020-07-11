@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
 
     public Stack stack;
     public RessourceManager ressource;
+    public EnemySpawner Spawner;
 
     public void Start()
     {
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
         stack = Stack.Instance;
         ressource.Initiate();
         stack.Initiate();
+        Spawner.Intitialize();
     }
 
     public void Update()
