@@ -23,7 +23,7 @@ public class Enemy : Entity
 
         _navMashAgent = GetComponent<NavMeshAgent>();
         _target = GameObject.FindGameObjectWithTag("Player").transform;
-
+        _navMashAgent.isStopped = false;
         StartCoroutine(RefreshTargetPos());
     }
 
@@ -70,9 +70,10 @@ public class Enemy : Entity
     private IEnumerator WaitToRecover()
     {
         _navMashAgent.isStopped = true;
-        _target.GetComponent<IDamageable>().Hit(Damage);
 
-        yield return new WaitForSeconds(_attackCooldown);
-        _navMashAgent.isStopped = false;
+        yield return new WaitForSeconds(0.5f);
+
+        _target.GetComponent<IDamageable>().Hit(Damage);
+        Die();
     }
 }
