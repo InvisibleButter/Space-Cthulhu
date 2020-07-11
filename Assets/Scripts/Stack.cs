@@ -38,6 +38,7 @@ public class Stack : MonoBehaviour
     List<Card> conveyorBelt;
     List<Card> discard;
     List<int> inactiveCards;
+    Card[] negativeEffects;
 
     public void Initiate()
     {
@@ -62,11 +63,16 @@ public class Stack : MonoBehaviour
             }
         }
         tickTimer = 0;
+
+        //i know that could be better but its fast and easy (gamejam :P)
+        negativeEffects = new Card[] {
+            new DMGCard(),new ResDownCard(),new SlowCard(), new TickStopCard()
+            };
     }
 
     public void StackUpdate()
     {
-        Debug.Log(tickTimer);
+        
         if (deck.Count == 0)
         {
             shufleDiscardIntoDeck();
@@ -121,9 +127,25 @@ public class Stack : MonoBehaviour
     public void ResolveCardFromBelt(int cardID)
     {
         discard.Add(conveyorBelt[0]);
+        conveyorBelt[0].Action();
         conveyorBelt.RemoveAt(0);
         inactiveCards.Add(cardID);
     }
+
+    public void AddNegativeEffect()
+    {
+        int randIndx = (int)Random.Range(0,negativeEffects.Length);
+        AddNewCardToBelt(negativeEffects[randIndx]);
+    }
+    public void AddNewCardToBelt(Card c)
+    {
+        int i = inactiveCards[0];
+        conveyorBelt.Add(c);
+        beltCards[i].AddToBelt((int)c.getCardType(), c.isPositive());
+        inactiveCards.RemoveAt(0);
+        tickTimer = cardDistance;
+    }
+
     private void PutCardFromDeckOnBelt()
     {
         int i = inactiveCards[0];
@@ -182,9 +204,5 @@ public class Stack : MonoBehaviour
             discard.RemoveAt(randomCardIdx);
         }
     }
-
-    private void ChangePosition()
-    {
-
-    }
+    
 }

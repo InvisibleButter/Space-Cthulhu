@@ -66,13 +66,20 @@ MonoBehaviour:
   HealthPerCard: 3
   MaxSpeed: 1.5
   NormalSpeed: 1
+  SlowSpeed: 0.5
+  SlowSpeedTime: 2
   SpeedBoostTime: 3
   ShieldTime: 3
   LightTime: 5
   MaxTickSpeed: 0.4
   NormalTickSpeed: 0.2
   TickBoostTime: 3
-  healt: 0
+  TickStopTime: 2
+  DMG: 1
+  ResDownAmmunition: 3
+  ResDownLight: 3
+  ResDownShield: 2
+  health: 0
   amunition: 0
   shieldTimer: 0
   speedBoostTimer: 0
@@ -80,6 +87,8 @@ MonoBehaviour:
   lightTimer: 0
   speed: 0
   tickSpeed: 0
+  slowSpeedTimer: 0
+  tickStopTimer: 0
 --- !u!114 &934077680382864089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +114,10 @@ MonoBehaviour:
   - {fileID: -2319406322562588323, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
   - {fileID: -7050473590979094863, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
   - {fileID: 8015114893973570922, guid: c5a3cd98b9b283d4ba0c7e5ec3903a9a, type: 3}
+  - {fileID: -7463217191304396364, guid: 0f917c9d0a9c8204cb87edc8daed092f, type: 3}
+  - {fileID: -6130198751503605583, guid: 0f917c9d0a9c8204cb87edc8daed092f, type: 3}
+  - {fileID: -3157506394106421587, guid: 0f917c9d0a9c8204cb87edc8daed092f, type: 3}
+  - {fileID: 3472876157915293971, guid: 0f917c9d0a9c8204cb87edc8daed092f, type: 3}
   maxCardOnBelt: 30
   startCardsAmount: 05000000010000000200000002000000
   cardDistance: 0.2

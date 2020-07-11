@@ -13,7 +13,11 @@ public abstract class Card
         Speed=3,
         Shield=4,
         Repair=5,
-        Overclocking=6
+        Overclocking=6,
+        DMG=7,
+        ResDown=8,
+        Slow=9,
+        Stop=10
     }
     public CardType type;
     public bool positive;
@@ -28,7 +32,7 @@ public abstract class Card
         return type;
     }
 
-    public abstract void Action(float f);
+    public abstract void Action();
 
     public void setPositive(bool p)
     {
@@ -51,9 +55,10 @@ public class AmunitionCard : Card
         setPositive(true);
     }
 
-    public override void Action(float amount)
+    public override void Action()
     {
         Debug.Log("Munition Nachladen, Animationen und Effekte abspielen");
+        RessourceManager.Instance.Reloade();
     }
 }
 public class HealingCard : Card
@@ -64,9 +69,10 @@ public class HealingCard : Card
         setPositive(true);
     }
 
-    public override void Action(float amount)
+    public override void Action()
     {
         Debug.Log("Healing");
+        RessourceManager.Instance.Heal();
     }
 }
 public class LightCard : Card
@@ -77,9 +83,10 @@ public class LightCard : Card
         setPositive(true);
     }
 
-    public override void Action(float time)
+    public override void Action()
     {
         Debug.Log("Light");
+        RessourceManager.Instance.RefillLight();
     }
 }
 public class SpeedCard : Card
@@ -90,9 +97,10 @@ public class SpeedCard : Card
         setPositive(true);
     }
 
-    public override void Action(float time)
+    public override void Action()
     {
         Debug.Log("Speed");
+        RessourceManager.Instance.SpeedBoost();
     }
 }
 public class ShieldCard : Card
@@ -101,11 +109,13 @@ public class ShieldCard : Card
     {
         setCardType(CardType.Shield);
         setPositive(true);
+        
     }
 
-    public override void Action(float time)
+    public override void Action()
     {
         Debug.Log("Shieldup");
+        RessourceManager.Instance.RefillShield();
     }
 }
 public class RepairCard : Card
@@ -116,9 +126,10 @@ public class RepairCard : Card
         setPositive(true);
     }
 
-    public override void Action(float notNeeded)
+    public override void Action()
     {
         Debug.Log("repair");
+        Stack.Instance.RemoveAllBadCard();
     }
 }
 
@@ -130,8 +141,71 @@ public class OverclockingCard : Card
         setPositive(true);
     }
 
-    public override void Action(float time)
+    public override void Action()
     {
         Debug.Log("overclocking");
+        RessourceManager.Instance.TickBoost();
+    }
+}
+
+
+
+public class DMGCard : Card
+{
+    public DMGCard()
+    {
+        setCardType(CardType.DMG);
+        setPositive(true);
+    }
+
+    public override void Action()
+    {
+        Debug.Log("DMG");
+        RessourceManager.Instance.DealDamage();
+    }
+}
+
+public class ResDownCard : Card
+{
+    public ResDownCard()
+    {
+        setCardType(CardType.ResDown);
+        setPositive(true);
+    }
+
+    public override void Action()
+    {
+        Debug.Log("ResDown");
+        RessourceManager.Instance.SteelResources();
+    }
+}
+
+public class SlowCard : Card
+{
+    public SlowCard()
+    {
+        setCardType(CardType.Slow);
+        setPositive(true);
+    }
+
+    public override void Action()
+    {
+        Debug.Log("Slow");
+        RessourceManager.Instance.SpeedSlow();
+    }
+}
+
+public class TickStopCard : Card
+{
+    public TickStopCard()
+    {
+        setCardType(CardType.Stop);
+        setPositive(false);
+    }
+
+    public override void Action()
+    {
+        Debug.Log("tickStop");
+        RessourceManager.Instance.TickStop();
     }
 }
