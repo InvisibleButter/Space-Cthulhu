@@ -13,6 +13,7 @@ public class Player : Entity
 
 		_playerController = GetComponent<PlayerController>();
 		_gunController = GetComponent<GunController>();
+		_currenthealth = RessourceManager.Instance.health;
 	}
 
 	void Update()
@@ -38,8 +39,19 @@ public class Player : Entity
 		}
 	}
 
+	public override void Hit(int amount)
+	{
+		RessourceManager.Instance.DealDamage();
+		_currenthealth = RessourceManager.Instance.health;
+
+		if(_currenthealth <= 0)
+		{
+			Die();
+		}
+	}
+
 	public override void Die()
 	{
-		base.Die();
+		//todo some crazy shit here
 	}
 }

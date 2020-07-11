@@ -4,7 +4,7 @@ public class Entity : MonoBehaviour, IDamageable
 {
     public int MaxHealth = 2;
 
-    private int _currenthealth;
+    protected int _currenthealth;
     private bool _isDead;
 
     protected virtual void Start()
@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour, IDamageable
         _currenthealth = MaxHealth;
     }
 
-    public void Hit(int amount)
+    public virtual void Hit(int amount)
     {
         _currenthealth -= amount;
         if(_currenthealth <= 0 && !_isDead)

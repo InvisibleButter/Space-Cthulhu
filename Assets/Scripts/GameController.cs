@@ -38,4 +38,14 @@ public class GameController : MonoBehaviour
         ressource.RessourceUpdate();
         stack.StackUpdate();
     }
+
+    public void GameOver()
+    {
+        Debug.Log("*** gameOver");
+    }
+
+    public void Win()
+    {
+        Debug.Log("** win");
+    }
 }
