@@ -872,31 +872,6 @@ PrefabInstance:
       propertyPath: belt
       value: 
       objectReference: {fileID: 508149931}
-    - target: {fileID: 2718488325493248286, guid: 6bd2b8cc0b282f141851e423fdac6817,
-        type: 3}
-      propertyPath: MaxMagizines
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2718488325493248286, guid: 6bd2b8cc0b282f141851e423fdac6817,
-        type: 3}
-      propertyPath: StartMagazines
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2718488325493248286, guid: 6bd2b8cc0b282f141851e423fdac6817,
-        type: 3}
-      propertyPath: MagazinesPerCard
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2718488325493248286, guid: 6bd2b8cc0b282f141851e423fdac6817,
-        type: 3}
-      propertyPath: ShotsPerMagazines
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2718488325493248286, guid: 6bd2b8cc0b282f141851e423fdac6817,
-        type: 3}
-      propertyPath: ResDownMagazines
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5022491132898098526, guid: 6bd2b8cc0b282f141851e423fdac6817,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -977,11 +952,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 982835962}
     m_Modifications:
-    - target: {fileID: 6549356458576233048, guid: 28f65e6f5fefa694aa660a39c6ae1f33,
-        type: 3}
-      propertyPath: MaxHealth
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6549356458576233050, guid: 28f65e6f5fefa694aa660a39c6ae1f33,
         type: 3}
       propertyPath: m_Name
@@ -1253,7 +1223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1667463001
 Transform:
   m_ObjectHideFlags: 0

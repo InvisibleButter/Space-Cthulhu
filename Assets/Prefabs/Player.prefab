@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549356457733726101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6549356458049364899}
   - component: {fileID: 6549356458049364897}
   - component: {fileID: 6549356458049364896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549356458117425359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6549356458169507878}
   - component: {fileID: 6549356458169507876}
   - component: {fileID: 6549356458169507879}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6549356458454557113}
   - component: {fileID: 6549356458454557110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 6549356458576233044}
   - component: {fileID: 6549356458576233048}
   - component: {fileID: 6549356458576233042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c92a3a312ee1d1418e0c276d6caeb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 2
 --- !u!114 &6549356458576233042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +426,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletHolder: {fileID: 6549356458117425359}
-  ReloadInfo: {fileID: 0}
   CurrentGun: {fileID: 6549356458454557110}
 --- !u!1 &6549356458812718055
 GameObject:
@@ -439,7 +438,7 @@ GameObject:
   - component: {fileID: 6549356458812718052}
   - component: {fileID: 6549356458812718050}
   - component: {fileID: 6549356458812718053}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549356459003233690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6549356459189507379}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muzzlr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +580,7 @@ GameObject:
   - component: {fileID: 6549356459488053362}
   - component: {fileID: 6549356459488053365}
   - component: {fileID: 6549356459488053364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

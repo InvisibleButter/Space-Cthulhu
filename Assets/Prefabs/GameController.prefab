@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stack: {fileID: 934077680382864089}
   ressource: {fileID: 2718488325493248286}
+  Spawner: {fileID: 0}
 --- !u!114 &2718488325493248286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,14 +60,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5390511e0d03a6a479ae7297be545984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAmunition: 45
-  StartAmunition: 25
-  AmunitionPerCard: 5
+  MaxMagizines: 9
+  StartMagazines: 3
+  MagazinesPerCard: 1
+  ShotsPerMagazines: 5
   MaxHealth: 33
   HealthPerCard: 3
-  MaxSpeed: 1.5
-  NormalSpeed: 1
-  SlowSpeed: 0.5
+  MaxSpeed: 3.5
+  NormalSpeed: 3
+  SlowSpeed: 2.5
   SlowSpeedTime: 2
   SpeedBoostTime: 3
   ShieldTime: 3
@@ -76,11 +78,11 @@ MonoBehaviour:
   TickBoostTime: 3
   TickStopTime: 2
   DMG: 1
-  ResDownAmmunition: 3
+  ResDownMagazines: 1
   ResDownLight: 3
   ResDownShield: 2
   health: 0
-  amunition: 0
+  magazines: 0
   shieldTimer: 0
   speedBoostTimer: 0
   tickBoostTimer: 0
@@ -89,6 +91,7 @@ MonoBehaviour:
   tickSpeed: 0
   slowSpeedTimer: 0
   tickStopTimer: 0
+  shotsInMagazine: 0
 --- !u!114 &934077680382864089
 MonoBehaviour:
   m_ObjectHideFlags: 0
