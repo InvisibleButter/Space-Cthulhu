@@ -2,7 +2,7 @@
 
 public interface IDamageable
 {
-    void Hit(int amount, RaycastHit hit);
+    void Hit(int amount);
 
     void IncreaseHealth(int amount);
 

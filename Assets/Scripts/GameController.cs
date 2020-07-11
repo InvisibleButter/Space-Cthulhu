@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance { get { return _instance; } }
 
-
     private void Awake()
     {
         if (_instance != null && _instance != this)

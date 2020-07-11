@@ -19,7 +19,7 @@ public class Player : Entity
 
 	void Update()
 	{
-		//hanlde move and rotation
+		//handle move and rotation
 		float x = Input.GetAxisRaw("Horizontal");
 		float z = Input.GetAxisRaw("Vertical");
 
@@ -33,6 +33,10 @@ public class Player : Entity
 		if(Input.GetMouseButton(0))
 		{
 			_gunController.Shoot();
+		}
+		if(Input.GetKey(KeyCode.R))
+		{
+			_gunController.Reload();
 		}
 	}
 

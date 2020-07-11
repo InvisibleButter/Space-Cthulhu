@@ -12,6 +12,12 @@ public class Bullet : MonoBehaviour
 	private void Start()
 	{
 		Destroy(gameObject, LifeTime);
+
+		//Collider[] initialCollisions = Physics.OverlapSphere(transform.position, .1f, Mask);
+		//if (initialCollisions.Length > 0)
+		//{
+		//	HitObject(initialCollisions[0]);
+		//}
 	}
 
 	public void SetSpeed(float newSpeed)
@@ -31,13 +37,19 @@ public class Bullet : MonoBehaviour
 		Ray r = new Ray(transform.position, transform.forward);
 		RaycastHit hit;
 
-		if(Physics.Raycast(r, out hit, moveDist + _skinWidth, Mask, QueryTriggerInteraction.Collide))
+		if (Physics.Raycast(r, out hit, moveDist + _skinWidth, Mask, QueryTriggerInteraction.Collide))
 		{
-			IDamageable damagedObj = hit.collider.GetComponent<IDamageable>();
-			if(damagedObj != null)
-			{
-				damagedObj.Hit(Damage, hit);
-			}
+			HitObject(hit.collider);
 		}
+	}
+
+	private void HitObject(Collider c)
+	{
+		IDamageable damageableObject = c.GetComponent<IDamageable>();
+		if (damageableObject != null)
+		{
+			damageableObject.Hit(Damage);
+		}
+		Destroy(gameObject);
 	}
 }
