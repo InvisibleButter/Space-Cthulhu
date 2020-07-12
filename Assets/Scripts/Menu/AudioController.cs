@@ -1,19 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
+    [Serializable]
     public enum Sounds
     {
         Button,
         GameOver,
         OpenUi, 
-        Invade
+        Dead,
+        Reload,
+        Shoot, 
+        Collect_1,
+        Hit,
+        EnemyDead
     }
 
-    public AudioClip ButtonSounds;
-    public AudioClip GameOverSound;
-    public AudioClip OpenUISound;
-   // public AudioClip InvadeSound;
+    public List<AudioElement> SoundElements = new List<AudioElement>();
 
     public static AudioController Instance;
     public AudioSource UISoundSource;
@@ -34,25 +40,23 @@ public class AudioController : MonoBehaviour
 
     public void PlaySound(Sounds type)
     {
-        switch (type)
+        AudioElement c = SoundElements.FirstOrDefault(e => e.SoundType == type);
+
+        if( c != null)
         {
-            case Sounds.Button:
-                UISoundSource.PlayOneShot(ButtonSounds);
-                break;
-            case Sounds.GameOver:
-                UISoundSource.PlayOneShot(GameOverSound);
-                break;
-            case Sounds.OpenUi:
-                UISoundSource.PlayOneShot(OpenUISound);
-                break; 
-            //case Sounds.Invade:
-            //    UISoundSource.PlayOneShot(InvadeSound);
-            //    break;
+            UISoundSource.PlayOneShot(c.SoundClip);
         }
     }
 
     public void PlayTheme()
     {
         // ThemeSoundSource.Play();
+    }
+
+    [Serializable]
+    public class AudioElement
+    {
+        public AudioClip SoundClip;
+        public Sounds SoundType;
     }
 }

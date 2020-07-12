@@ -19,7 +19,13 @@ public class Entity : MonoBehaviour, IDamageable
         {
             Die();
         }
+        else
+        {
+            PlaySound();
+        }
     }
+
+    public virtual void PlaySound() { }
 
     public void IncreaseHealth(int amount)
     {

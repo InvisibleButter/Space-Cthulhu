@@ -60,6 +60,7 @@ public class CardController : MonoBehaviour
 
     private void finish()
     {
+        AudioController.Instance.PlaySound(AudioController.Sounds.Collect_1);
         Stack.Instance.ResolveCardFromBelt(CardId);
         gameObject.SetActive(false);
     }

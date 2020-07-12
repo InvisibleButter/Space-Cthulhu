@@ -39,6 +39,7 @@ public class Gun : MonoBehaviour
 		if (!_isReloading && Time.time > _nextShotTime && RessourceManager.Instance.shotsInMagazine > 0)
 		{
 			RessourceManager.Instance.Shoot();
+			AudioController.Instance.PlaySound(AudioController.Sounds.Shoot);
 			_nextShotTime = Time.time + MsBetweenShots / 1000;
 			Bullet bullet = Instantiate(Projectile, Muzzle.position, Muzzle.rotation, GunController.Instance.BulletHolder) as Bullet;
 			bullet.SetSpeed(MuzzleVelocity);

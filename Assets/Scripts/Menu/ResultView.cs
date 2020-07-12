@@ -12,7 +12,7 @@ public class ResultView : MonoBehaviour
     public void ShowResult(bool win)
     {
         Result.SetActive(true);
-
+        
         ResultTxt.text = win ? "Gratulation! You won!" : "You lost!";
         DescrTxt.text = win ? "You escaped the chtulhus and reached the board computer." : "You were killed by the cthulhus. Try again.";
         ResultTxt.color = win ? WinColor : FailColor;

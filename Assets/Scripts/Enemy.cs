@@ -47,7 +47,13 @@ public class Enemy : Entity
             Kill.Invoke(this, null);
         }
 
+        AudioController.Instance.PlaySound(AudioController.Sounds.EnemyDead);
         EffectManager.Instance.ShowEffect(EffectManager.EffectType.EnemyDead, new Vector3(transform.position.x, 58f, transform.position.z));
+    }
+
+    public override void PlaySound()
+    {
+        AudioController.Instance.PlaySound(AudioController.Sounds.Hit);
     }
 
     public void Respawn()

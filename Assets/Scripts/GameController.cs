@@ -44,14 +44,14 @@ public class GameController : MonoBehaviour
         stack.StackUpdate();
     }
 
-    public void GameOver()
-    {
+    public void GameOver()
+    {        AudioController.Instance.PlaySound(AudioController.Sounds.Dead);
         Result.ShowResult(false);
         IsRunning = false;
     }
 
-    public void Win()
-    {
+    public void Win()
+    {        AudioController.Instance.PlaySound(AudioController.Sounds.GameOver);
         Result.ShowResult(true);
         IsRunning = false;
     }

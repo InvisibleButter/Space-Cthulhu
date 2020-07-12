@@ -299,8 +299,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8182d9021f6167e4f889c3837b3144b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonSounds: {fileID: 8300000, guid: ae8db7c1ce6afeb4f93310e6282b263d, type: 3}
-  GameOverSound: {fileID: 8300000, guid: 69958e3debf170c448cfc4a622553694, type: 3}
-  OpenUISound: {fileID: 8300000, guid: 7498863e0533ecf43b72afd0e2fd5e20, type: 3}
+  SoundElements:
+  - SoundClip: {fileID: 8300000, guid: ae8db7c1ce6afeb4f93310e6282b263d, type: 3}
+    SoundType: 0
+  - SoundClip: {fileID: 8300000, guid: 69958e3debf170c448cfc4a622553694, type: 3}
+    SoundType: 1
+  - SoundClip: {fileID: 8300000, guid: 7498863e0533ecf43b72afd0e2fd5e20, type: 3}
+    SoundType: 2
+  - SoundClip: {fileID: 8300000, guid: 340230fd137e21d479c1950911fc15bd, type: 3}
+    SoundType: 3
+  - SoundClip: {fileID: 0}
+    SoundType: 4
+  - SoundClip: {fileID: 8300000, guid: 3fb82c87946c7b2469455893993fe2da, type: 3}
+    SoundType: 5
+  - SoundClip: {fileID: 8300000, guid: c4278c8451b02074d9854a7942c99792, type: 3}
+    SoundType: 6
+  - SoundClip: {fileID: 8300000, guid: 3b0762476b317304d9946d98595c7e60, type: 3}
+    SoundType: 7
+  - SoundClip: {fileID: 8300000, guid: eea78124a109a984a98c0bb70f7ec5f8, type: 3}
+    SoundType: 8
   UISoundSource: {fileID: 3739945685705870672}
   ThemeSoundSource: {fileID: 206123235839425698}
