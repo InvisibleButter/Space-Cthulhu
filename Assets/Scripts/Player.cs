@@ -6,6 +6,7 @@ public class Player : Entity
 {
 	private PlayerController _playerController;
 	private GunController _gunController;
+    private GunAnimation _gunAnimator;
 
 	protected override void Start()
 	{
@@ -14,6 +15,7 @@ public class Player : Entity
 		_playerController = GetComponent<PlayerController>();
 		_gunController = GetComponent<GunController>();
 		_currenthealth = RessourceManager.Instance.health;
+        _gunAnimator = GunAnimation.Instance;
 	}
 
 	void Update()
@@ -32,16 +34,35 @@ public class Player : Entity
 
 		_playerController.Move(moveVelocity);
 		_playerController.Rotate();
+        if (x != 0 || z != 0)
+        {
+            _gunAnimator.StartWalking();
+        }
+        else
+        {
+            _gunAnimator.StopWalking();
+        }
 
-		// handle shooting
-		if(Input.GetMouseButton(0))
-		{
-			_gunController.Shoot();
-		}
-		if(Input.GetKey(KeyCode.R))
-		{
-			_gunController.Reload();
-		}
+
+        // handle shooting
+        if (Input.GetMouseButton(0))
+        {
+            _gunController.Shoot();
+            _gunAnimator.StartShooting();
+        }
+        else
+        {
+            _gunAnimator.StopShooting();
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            _gunController.Reload();
+            _gunAnimator.StartReloading();
+        }
+        else
+        {
+            _gunAnimator.StopShooting();
+        }
 	}
 
 	public override void Hit(int amount)

@@ -34,6 +34,7 @@ public class GunAnimation : MonoBehaviour
     public void StartShooting()
     {
         animator.SetBool("Fire",true);
+        
     }
     public void StopShooting()
     {

@@ -172,8 +172,11 @@ public class RessourceManager : MonoBehaviour
     public void DealDamage(int amount)
     {
         if (shieldTimer <= 0)
+        {
             health -= amount;
-
+            Stack.Instance.AddNegativeEffect();
+            shieldTimer = 0.5f;
+        }
         if(health <= 0)
         {
             GameController.Instance.GameOver();

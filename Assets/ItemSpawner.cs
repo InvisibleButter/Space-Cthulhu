@@ -9,6 +9,7 @@ public class ItemSpawner : MonoBehaviour
     public Sprite[] itemSprites;
     public GameObject effects;
     public SpriteRenderer sr;
+    private Transform player;
 
     private Collider c;
     private float timer;
@@ -25,6 +26,7 @@ public class ItemSpawner : MonoBehaviour
         int r = Random.Range(0, itemSprites.Length);
         type = r;
         sr.sprite = itemSprites[r];
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class ItemSpawner : MonoBehaviour
             sr.sprite = itemSprites[r];
             type = r;
             isActive = true;
+            sr.transform.LookAt(player);
         }
     }
 
