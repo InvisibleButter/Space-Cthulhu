@@ -188,8 +188,15 @@ public class RessourceManager : MonoBehaviour
     }
     public void AddMagazine()
     {
-        if (magazines + MagazinesPerCard > MaxMagizines)
+        if ((magazines + MagazinesPerCard > MaxMagizines))
+        {
+            //if(shotsInMagazine == 0)
+            //{
+            //    shotsInMagazine = ShotsPerMagazines;
+            //}
             magazines = MaxMagizines;
+        }
+
         else
             magazines += MagazinesPerCard;
     }
