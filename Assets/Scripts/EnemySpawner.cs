@@ -72,7 +72,9 @@ public class EnemySpawner : MonoBehaviour
         Transform t = GetSpawnPoint();
 
         e.transform.position = t.position;
-        e.gameObject.SetActive(true);
+
+        yield return new WaitForEndOfFrame();
+       e.gameObject.SetActive(true);
         e.Respawn();
     }
 
