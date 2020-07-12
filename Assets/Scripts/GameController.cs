@@ -44,15 +44,15 @@ public class GameController : MonoBehaviour
         stack.StackUpdate();
     }
 
-    public void GameOver()
-    {
-        Result.ShowResult(false);
-        IsRunning = false;
+    public void GameOver()
+    {
+        Result.ShowResult(false);
+        IsRunning = false;
     }
 
-    public void Win()
-    {
-        Result.ShowResult(true);
-        IsRunning = false;
+    public void Win()
+    {
+        Result.ShowResult(true);
+        IsRunning = false;
     }
 }
