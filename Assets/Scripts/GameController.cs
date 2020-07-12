@@ -8,6 +8,10 @@ public class GameController : MonoBehaviour
 
     public static GameController Instance { get { return _instance; } }
 
+    public ResultView Result;
+
+    public bool IsRunning { get; set; }
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -18,6 +22,7 @@ public class GameController : MonoBehaviour
         {
             _instance = this;
         }
+        IsRunning = true;
     }
 
     public Stack stack;
@@ -41,11 +46,13 @@ public class GameController : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("*** gameOver");
+        Result.ShowResult(false);
+        IsRunning = false;
     }
 
     public void Win()
     {
-        Debug.Log("** win");
+        Result.ShowResult(true);
+        IsRunning = false;
     }
 }

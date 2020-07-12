@@ -18,6 +18,11 @@ public class Player : Entity
 
 	void Update()
 	{
+		if (!GameController.Instance.IsRunning)
+		{
+			return;
+		}
+
 		//handle move and rotation
 		float x = Input.GetAxisRaw("Horizontal");
 		float z = Input.GetAxisRaw("Vertical");

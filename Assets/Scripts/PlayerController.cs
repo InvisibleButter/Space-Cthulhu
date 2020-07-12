@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour {
 
 	public void Rotate() 
 	{
+		if(!GameController.Instance.IsRunning)
+		{
+			return;
+		}
+
 		float mouseX = Input.GetAxis("Mouse X") * MouseSensitivity * Time.deltaTime;
 		float mouseY = Input.GetAxis("Mouse Y") * MouseSensitivity * Time.deltaTime;
 
@@ -32,6 +37,11 @@ public class PlayerController : MonoBehaviour {
 
 	public void FixedUpdate()
 	{
+		if (!GameController.Instance.IsRunning)
+		{
+			return;
+		}
+
 		_rigidBody.MovePosition(_rigidBody.position + _velocity * Time.fixedDeltaTime);
 	}
 }

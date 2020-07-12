@@ -29,7 +29,7 @@ public class Enemy : Entity
 
     private IEnumerator RefreshTargetPos()
     {
-        while(_target != null)
+        while(_target != null || !GameController.Instance.IsRunning)
         {
             _navMashAgent.SetDestination(_target.position);
             yield return new WaitForSeconds(_updateTime);
