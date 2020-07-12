@@ -47,7 +47,7 @@ public class Enemy : Entity
             Kill.Invoke(this, null);
         }
 
-        EffectManager.Instance.ShowEffect(EffectManager.EffectType.EnemyDead, new Vector3(transform.position.x, 1f, transform.position.z));
+        EffectManager.Instance.ShowEffect(EffectManager.EffectType.EnemyDead, new Vector3(transform.position.x, 58f, transform.position.z));
     }
 
     public void Respawn()
