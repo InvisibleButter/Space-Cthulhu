@@ -163,21 +163,11 @@ public class RessourceManager : MonoBehaviour
     {
         if(shieldTimer<=0)
             health -= DMG;
-
-        if(health <= 0)
-        {
-            GameController.Instance.GameOver();
-        }
     }
     public void DealDamage(int amount)
     {
         if (shieldTimer <= 0)
             health -= amount;
-
-        if (health <= 0)
-        {
-            GameController.Instance.GameOver();
-        }
     }
     public void Heal()
     {
