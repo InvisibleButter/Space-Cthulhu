@@ -28,6 +28,15 @@ public class GameController : MonoBehaviour
     public Stack stack;
     public RessourceManager ressource;
     public EnemySpawner Spawner;
+    public GameObject Reload;
+
+    public void ToggleReload(bool b)
+    {
+        if(b != Reload.activeInHierarchy)
+        {
+            Reload.SetActive(b);
+        }
+    }
 
     public void Start()
     {

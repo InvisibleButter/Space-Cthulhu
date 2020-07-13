@@ -308,7 +308,7 @@ MonoBehaviour:
     SoundType: 2
   - SoundClip: {fileID: 8300000, guid: 340230fd137e21d479c1950911fc15bd, type: 3}
     SoundType: 3
-  - SoundClip: {fileID: 0}
+  - SoundClip: {fileID: 8300000, guid: 232d04ca6f5099c41976671331756820, type: 3}
     SoundType: 4
   - SoundClip: {fileID: 8300000, guid: 3fb82c87946c7b2469455893993fe2da, type: 3}
     SoundType: 5

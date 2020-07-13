@@ -44,6 +44,7 @@ public class Gun : MonoBehaviour
 			Bullet bullet = Instantiate(Projectile, Muzzle.position, Muzzle.rotation, GunController.Instance.BulletHolder) as Bullet;
 			bullet.SetSpeed(MuzzleVelocity);
 		}
+		GameController.Instance.ToggleReload(RessourceManager.Instance.shotsInMagazine <= 0);
 	}
 
 	public void Reload() 
@@ -56,6 +57,7 @@ public class Gun : MonoBehaviour
 
 	private IEnumerator WaitToReload()
 	{
+		AudioController.Instance.PlaySound(AudioController.Sounds.Reload);
 		_isReloading = true;
 		yield return new WaitForSeconds(ReloadTime);
 
